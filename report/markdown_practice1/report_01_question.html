@@ -1,0 +1,68 @@
+<h1 id="-">ありきたりな文章</h1>
+<blockquote>
+<p>世界にはありきたりな文章が溢れている。</p>
+</blockquote>
+<p>私はこの文章を見たとき思わすブラウザバックしてしまった。いわゆる、そっ閉じ、である。</p>
+<p>近年台頭してきた、「ありきたり」という言葉、どうも<br>「じゃりみち」という、とあるMinecraftのゆっくり実況動画を投稿している人の<br><a href="http://www.nicovideo.jp/mylist/40094950">http://www.nicovideo.jp/mylist/40094950</a></p>
+<blockquote>
+<p>【Minecraft】ありきたりな工業と魔術</p>
+</blockquote>
+<p>という動画タイトルにちなんだものらしい。</p>
+<p>とにかく、この小説を読むことは放棄してプログラミングの情報収集でもするか。</p>
+<hr>
+<p>読みかけていた<br><a href="http://qiita.com/yumetodo/items/cdfb41781d32d98be1b4">関数の創世から深淵まで駆け抜ける関数とはなんぞや講座 - Qiita</a><br>を見る。</p>
+<blockquote>
+<p>では関数の型はどうかを見ていきましょう。</p>
+<p>で、普通自動変数領域はスタックというデータ構造を使うので、(規格書にはそんなことは書いていないけど)以下その仮定で話を進めます。</p>
+</blockquote>
+<pre><code class="lang-cpp">static int f(int n){ return n / 2; }
+int main(void)
+{
+    f(4);
+    return 0;
+}
+</code></pre>
+<blockquote>
+<p>もう一度確認すると関数<code>f</code>の型は<code>int(int)</code>型です。main関数内で<code>f(4)</code>とありますが、これはまず<code>f()</code>から関数呼び出しだとわかり、4とあるので引数は一つで型はint型です。
+なので<code>static int f(int n){ return n / 2; }</code>が見つかります。</p>
+<p>さて関数を呼び出しましょう。もっと実際には複雑ですがそれは後述するとします。</p>
+<ol>
+<li>戻り値の型はint型ですからstackに戻り値を書き込むためのint型ひとつ分のメモリーを確保します(x86アーキテクチャだとレジスタを使うらしいです)</li>
+<li>引数を後ろからスタックに積んでいきます。今回は引数は一つでint型なのでint型ひとつ分のメモリーを確保し、4を代入します。</li>
+<li>関数f内に処理が移ります</li>
+<li><code>return n / 2</code>とあるので、<code>n / 2</code>の演算結果を1で確保したメモリー領域に代入します</li>
+<li>main関数に処理が戻ります。</li>
+</ol>
+<p>大事な事があります。<strong>関数を呼び出すときは呼び出し元のスタックに戻り値を保存する無名の一時的な変数が作られるということです。</strong></p>
+</blockquote>
+<p>C言語というプログラミング言語は処理系依存が多くて話が抽象的になりやすくて困る。<br>まあJavascriptは実行環境によって挙動が変わるというか言語規格が実装の追認だからそれはそれで大変なのだが。</p>
+<p>つまるところ、世界には闇しかないということらしい(おお、怖！)</p>
+<p>そろそろ眠くなってきたのでもう少し先を見てみる</p>
+<table>
+<thead>
+<tr>
+<th>種類</th>
+<th>参照できるもの</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>lvalue reference(T&amp;)</td>
+<td>lvalue</td>
+</tr>
+<tr>
+<td>const lvalue rederence(const T&amp;)</td>
+<td>なんでも</td>
+</tr>
+<tr>
+<td>rvalue reference (T&amp;&amp;)</td>
+<td>rvalue</td>
+</tr>
+<tr>
+<td>const rvalue reference(const T&amp;&amp;)</td>
+<td>const rvalue</td>
+</tr>
+</tbody>
+</table>
+<p>するとこんな表があった。そういえばこのQiitaの記事もmarkdownで書かれているのだが、表を書くには<br><a href="http://www.tablesgenerator.com/markdown_tables">http://www.tablesgenerator.com/markdown_tables</a><br>というサイトが便利らしい。</p>
+<p>何れにせよこれ以上読むのは明日にしよう。</p>
