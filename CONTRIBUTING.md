@@ -19,8 +19,10 @@
 5. push
 6. Pull Requestを投げる。詳細は  
 [GitHubで共同開発のためのチュートリアル - Qiita](http://qiita.com/takeokunnn/items/5bc499121a21f8c5b990#6-%E5%A4%89%E6%9B%B4%E3%82%92master%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81%E9%96%8B%E7%99%BA%E4%B8%BB%E8%A6%81%E3%83%96%E3%83%A9%E3%83%B3%E3%83%81%E3%81%AB%E5%8F%8D%E6%98%A0%E3%81%97%E3%81%A6%E3%82%82%E3%82%89%E3%81%86%E3%81%9F%E3%82%81%E3%81%ABpull-request%E3%82%92%E5%87%BA%E3%81%99)  
-を参照
-7. mergeされたら提出が認められた。
+を参照  
+![post pull reqest](resource/img/pull_req_post.png)
+7. mergeされたら提出が認められた。  
+![pull reqest merged](resource/img/pull_req_merged.png)
 
 # その他typo等のfixを投げる時
 
